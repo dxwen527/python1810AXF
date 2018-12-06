@@ -12,4 +12,9 @@ $(function () {
         loop: true,
         autoplay : 3000,
     });
+     var mustbuySwiper = new Swiper('#mustbuySwiper', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        loop: true
+    });
 })
