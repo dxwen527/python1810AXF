@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    爱鲜蜂|注册
+{% endblock %}
+{% block extcss %}
+    <link rel="stylesheet" href="{% static 'mine/css/register.css' %}">
+{% endblock %}
+{% block extbasejs %}
+    <script src="{% static 'mine/js/register.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="register">
+        <div class="back">
+            <a href="{% url 'axf:mine' %}">
+                <span class="glyphicon glyphicon-share-alt"></span>
+            </a>
+        </div>
+        <form action="{% url 'axf:register' %}" method="post" enctype="multipart/form-data" id="register-view">
+            {% csrf_token %}
+            {#            <div class="form-group  has-feedback">#}
+            {#                <input type="text" class="form-control" id="email" aria-describedby="inputSuccess2Status" placeholder="邮箱">#}
+            {#                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>#}
+            {#            </div>#}
+            {# 邮箱 #}
+            <div class="form-group  has-feedback" id="email">
+                <input type="text" class="form-control"  aria-describedby="inputSuccess2Status" placeholder="邮箱" name="email">
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                <i class="help"></i>
+            </div>
+            {# 密码 #}
+            <div class="form-group  has-feedback" id="password">
+                <input type="password" class="form-control"  aria-describedby="inputSuccess2Status" placeholder="密码" name="password">
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                <i class="help"></i>
+            </div>
+            {# 确认密码 #}
+            <div class="form-group  has-feedback" id="password-d">
+                <input type="password" class="form-control"  aria-describedby="inputSuccess2Status" placeholder="确认密码">
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                <i class="help"></i>
+            </div>
+            {# 名字 #}
+             <div class="form-group  has-feedback" id="name">
+                <input type="text" class="form-control"  aria-describedby="inputSuccess2Status" placeholder="昵称" name="name">
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                <i class="help"></i>
+            </div>
+            {# 手机 #}
+            <div class="form-group  has-feedback" id="phone">
+                <input type="text" class="form-control"  aria-describedby="inputSuccess2Status" placeholder="手机号" name="phone">
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+                <i class="help"></i>
+            </div>
+{#            <input type="submit" value="注册">#}
+            <button type="button" class="btn btn-primary" id="subButton"> 注册</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
